@@ -1,0 +1,24 @@
+{% comment %} Drawer content {% endcomment %}
+{{ 'drawer.css' | asset_url | stylesheet_tag }}
+
+<section class="drawer" id="prophoto-drawer" data-drawer-target>
+  <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+  <div class="drawer__wrapper">
+    <div class="drawer__header">
+      <div class="drawer__title">
+        <h5>Continue Shopping</h5>
+      </div>
+      <button class="drawer__close" data-drawer-close aria-label="Close Drawer"></button>
+    </div>
+    <div class="drawer__content" id="cart__drawer">
+      <div id="cart__drawer_items">
+      </div>
+      <div style="margin-top: 50px">
+        <h4>Total: <span id="cart__total_price"></span></h4>
+        <a id="cart__checkout_btn" href="/checkout" class="productitem--action-atc button-primary atc-button--text" style="text-align:center;width:100%;">Proceed Checkout</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ 'drawer.js' | asset_url | script_tag }}
+{{ 'drawer-update.js' | asset_url | script_tag }}
